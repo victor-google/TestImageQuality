@@ -13,6 +13,6 @@
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent"
       android:layout_width="110dp"
-      android:layout_height="150dp"/>
+      android:layout_height="153dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
