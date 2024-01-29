@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context=".FirstFragment">
 
   <LinearLayout
@@ -17,27 +16,44 @@
       app:layout_constraintTop_toTopOf="parent">
 
     <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Width" />
+
+    <EditText
         android:id="@+id/width_text"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:inputType="numberDecimal"
-        android:text="110" />
+        android:text="600" />
 
     <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Quality" />
+
+    <EditText
         android:id="@+id/quality_text"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:inputType="numberDecimal"
-        android:text="80" />
+        android:text="100" />
 
     <Button
         android:id="@+id/refresh_button"
-        android:layout_width="100dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="refresh" />
+        android:text="apply spec" />
+
+    <Button
+        android:id="@+id/original_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Use original images" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview"
+        android:padding="10dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#444444" />

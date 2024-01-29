@@ -7,9 +7,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class MyRecyclerViewAdapter(context: Context, private val mData: List<Bitmap>) :
+class MyRecyclerViewAdapter(context: Context, private val mData: List<ImageData>) :
   RecyclerView.Adapter<MyRecyclerViewAdapter.ViewHolder>() {
 
   private var mInflater: LayoutInflater
@@ -24,8 +25,9 @@ class MyRecyclerViewAdapter(context: Context, private val mData: List<Bitmap>) :
   }
 
   override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-    val drawable = mData[position]
-    holder.imageView.setImageBitmap(drawable)
+    val data = mData[position]
+    holder.imageView.setImageBitmap(data.bitmap)
+    holder.textView.text = (data.fileSize / 1024).toString() + "KB"
   }
 
   override fun getItemCount(): Int {
@@ -35,9 +37,11 @@ class MyRecyclerViewAdapter(context: Context, private val mData: List<Bitmap>) :
   class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
     val imageView: ImageView
+    val textView: TextView
 
     init {
       imageView = itemView.findViewById(R.id.imageview)
+      textView = itemView.findViewById(R.id.imageText)
     }
 
   }
