@@ -15,29 +15,46 @@
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Width" />
+        android:orientation="horizontal">
 
-    <EditText
-        android:id="@+id/width_text"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:inputType="numberDecimal"
-        android:text="600" />
+      <LinearLayout
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Width" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Quality" />
+        <EditText
+            android:id="@+id/width_text"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:text="600" />
+      </LinearLayout>
 
-    <EditText
-        android:id="@+id/quality_text"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:inputType="numberDecimal"
-        android:text="100" />
+      <LinearLayout
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Quality" />
+
+        <EditText
+            android:id="@+id/quality_text"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:text="100" />
+      </LinearLayout>
+
+    </LinearLayout>
 
     <Button
         android:id="@+id/refresh_button"
@@ -53,9 +70,9 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview"
-        android:padding="10dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:padding="10dp"
         android:background="#444444" />
   </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,5 +1,6 @@
 package com.example.android.testnearbyimage
 
+import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.graphics.drawable.BitmapDrawable
@@ -49,12 +50,12 @@ class FirstFragment : Fragment() {
     }
     originalButton = binding.originalButton
     originalButton.setOnClickListener {
-      setOriginalPhotos(true)
+      setOriginalPhotos()
     }
     return binding.root
   }
 
-  private fun setOriginalPhotos(showSize: Boolean) {
+  private fun setOriginalPhotos() {
     val imageData = originalImages.map {
       val imageData = process(it, it.width, 100)
       val fileSize = imageData.fileSize
@@ -77,8 +78,6 @@ class FirstFragment : Fragment() {
       resources.getDrawable(R.drawable.random_h),
       resources.getDrawable(R.drawable.random_v),
     ).map { (it as BitmapDrawable).bitmap }
-
-    // setOriginalPhotos(true)
     refresh()
   }
 
@@ -108,16 +107,6 @@ class FirstFragment : Fragment() {
     // val bitmapResized = Bitmap.createScaledBitmap(b, newWidth, newHeight.toInt(), false)
     return BitmapDrawable(resources, bitmapResized)
   }
-
-  // private fun cropImage(b: Bitmap): Bitmap {
-  //   // ThumbnailUtils.extractThumbnail(b, )
-  //   // val widthHeightRatio = widthToHeightRatio
-  //   // var finalWidth =
-  //   // var finalHeight = 0
-  //   // // if (b.height > b.width) {
-  //   // //
-  //   // // }
-  // }
 
   private fun compressToJPG(bitmap: Bitmap, quality: Int): ByteArray {
     val out = ByteArrayOutputStream()
